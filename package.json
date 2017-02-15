@@ -1,6 +1,6 @@
 {
   "name": "history",
-  "version": "1.16.0",
+  "version": "2.0.0",
   "scripts": {
     "dev": "gulp develop",
     "debug": "node-debug index.js",
@@ -8,10 +8,10 @@
     "lint": "eslint lib plugins *.js --ext .js,.jsx",
     "lint:filter": "eslint --ext .js,.jsx",
     "release": "standard-version",
-    "start": "webpack --config plugins/webpack.js && node .",
+    "start": "webpack --config webpack.js && node .",
     "test:all": "gulp --gulpfile plugins/gulpfile.js test",
     "test": "nyc  --extension .jsx tape plugins/**/*.spec.js",
-    "test:react": "babel-tape-runner plugins/album/test/*.js | faucet",
+    "test:react": "babel-tape-runner plugins/album/test/*.js plugins/video/test/*.js | faucet",
     "ci-cover:coveralls": "nyc report --reporter=text-lcov | coveralls",
     "ci-cover:prep-codeclimate": "nyc report --reporter=text-lcov > coverage.lcov",
     "ci-cover:codeclimate": "codeclimate-test-reporter < coverage.lcov"
@@ -43,13 +43,14 @@
     "lout": "^9.2.0",
     "mime-types": "^2.1.12",
     "mkdirp": "^0.5.0",
-    "node-notifier": "^4.1.2",
+    "node-notifier": "^5.0.1",
     "react": "^15.3.2",
     "react-dom": "^15.3.2",
     "rimraf": "^2.2.8",
+    "tap-webpack-plugin": "^1.1.0",
     "tuxharness": "^2.0.4",
     "vision": "^4.1.0",
-    "webpack": "^1.13.3",
+    "webpack": "^2.2.1",
     "xml2js": "^0.4.17"
   },
   "devDependencies": {
@@ -70,7 +71,7 @@
     "expect.js": "^0.3.0",
     "extend-tape": "^1.2.0",
     "faucet": "^0.0.1",
-    "file-loader": "^0.9.0",
+    "file-loader": "^0.10.0",
     "gulp": "^3.9.0",
     "gulp-concat": "^2.4.3",
     "gulp-develop-server": "^0.5.2",
@@ -92,13 +93,12 @@
     "tape-catch": "^1.0.6",
     "tape-jsx-equals": "^1.0.0",
     "url-loader": "^0.5.7",
-    "webpack": "^1.13.3",
     "yargs": "^6.5.0"
   },
   "peerDependencies": {
     "eslint": "^3.13.0",
-    "eslint-plugin-jsx-a11y": "^3.0.2",
     "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^3.0.2",
     "eslint-plugin-react": "^6.9.0"
   },
   "description": "Your personal history storyboarded with photo and video albums. Associate photos with their meta data including geocode, caption, friends (characters)... in XML albums.",
