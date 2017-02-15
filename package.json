@@ -51,7 +51,8 @@
     "tuxharness": "^2.0.4",
     "vision": "^4.1.0",
     "webpack": "^2.2.1",
-    "xml2js": "^0.4.17"
+    "xml2js": "^0.4.17",
+    "yarn": "^0.20.3"
   },
   "devDependencies": {
     "@mapbox/geojsonhint": "^1.2.1",

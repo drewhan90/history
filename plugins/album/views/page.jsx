@@ -28,6 +28,7 @@ function Page({ album }) {
         <script src="./album/static/utils.js" />
         <script src="./album/static/map.js" />
         <script src="./album/static/album.js" />
+        <script src="./album/static/nearBy.js" />
       </body>
     </html>
   );
